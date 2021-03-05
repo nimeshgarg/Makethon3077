@@ -39,18 +39,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+          children: [
+            btn_create("Sign Up"),
+            SizedBox(
+              height: 8.0,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            btn_create("Log In")
           ],
         ),
       ),
@@ -60,5 +59,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ),
     );
+  }
+}
+
+class btn_create extends StatelessWidget {
+  final String name;
+  const btn_create(this.name);
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+        decoration: BoxDecoration(color: Colors.orange),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(name),
+        ));
   }
 }
