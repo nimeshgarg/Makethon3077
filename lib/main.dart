@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             btn_create("Sign Up"),
             SizedBox(
-              height: 8.0,
+              height: 15.0,
             ),
             btn_create("Log In")
           ],
@@ -71,7 +71,7 @@ class btn_create extends StatelessWidget {
     return DecoratedBox(
         decoration: BoxDecoration(color: Colors.orange),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
           child: Text(name),
         ));
   }
