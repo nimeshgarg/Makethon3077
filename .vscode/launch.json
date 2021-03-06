@@ -6,7 +6,6 @@
     "configurations": [
         {
             "name": "pwd_rojggar",
-            "program": "lib/qrcode.dart",
             "request": "launch",
             "type": "dart"
         }
