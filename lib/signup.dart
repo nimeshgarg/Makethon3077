@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:pwd_rojggar/login.dart';
+import 'package:pwd_rojggar/main.dart';
 
 
 void main() {
