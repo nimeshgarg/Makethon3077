@@ -16,7 +16,16 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(body: Column(children: <Widget>[
+      
       Expanded(
+          flex: 1,
+          child: Center(
+              child: Text('Scan Result : $qrText'),
+          )
+      )
+    ],),);
+  }
+  Expanded(
         flex: 5,
         child: QRView(key: qrKey,
             overlay: QrScannerOverlayShape(
@@ -28,14 +37,6 @@ class MyAppState extends State<MyApp> {
             ),
             onQRViewCreated: _onQRViewCreate),
       ),
-      Expanded(
-          flex: 1,
-          child: Center(
-              child: Text('Scan Result : $qrText'),
-          )
-      )
-    ],),);
-  }
 
   @override
   void dispose() {
