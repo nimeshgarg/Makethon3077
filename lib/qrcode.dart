@@ -11,6 +11,7 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   GlobalKey qrKey = GlobalKey();
   var qrText = "";
+  var username = "";
   QRViewController controller;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,10 @@ class MyAppState extends State<MyApp> {
           Expanded(
               flex: 1,
               child: Center(
-                child: Text('Scan Result : $qrText'),
+                child: Text('Hi, $username',
+                style: TextStyle(backgroundColor: Colors.blue,fontWeight: FontWeight.bold),
+              
+                ),
               )),
           Expanded(
             flex: 5,
