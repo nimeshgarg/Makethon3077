@@ -23,7 +23,7 @@ class MyAppState extends State<MyApp> {
               flex: 1,
               child: Center(
                 child: Text('Hi, $username',
-                style: TextStyle(backgroundColor: Colors.blue,fontWeight: FontWeight.bold),
+                style: TextStyle(backgroundColor: Colors.blue,fontWeight: FontWeight.bold,fontSize: 20),
               
                 ),
               )),
