@@ -19,7 +19,7 @@ class _State extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Login Page'),
+          title: Text('PWD Rojggar'),
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
@@ -52,7 +52,17 @@ class _State extends State<MyApp> {
                     ),
                   ),
                 ),
-                
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: TextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                    ),
+                  ),
+                ),
                 Container(
                   height: 50,
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
