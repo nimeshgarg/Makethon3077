@@ -1,78 +1,72 @@
 import 'package:flutter/material.dart';
-
+ 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+  ));
 }
-
-//flutter
-class MyApp extends StatelessWidget {
+ 
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'PWD Rojgar'),
-    );
-  }
+  _State createState() => _State();
 }
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+ 
+class _State extends State<MyApp> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            btn_create("Sign Up"),
-            SizedBox(
-              height: 15.0,
-            ),
-            btn_create("Log In")
-          ],
+        appBar: AppBar(
+          title: Text('Login Page'),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class btn_create extends StatelessWidget {
-  final String name;
-  const btn_create(this.name);
-
-  @override
-  Widget build(BuildContext context) {
-    return DecoratedBox(
-        decoration: BoxDecoration(color: Colors.orange),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
-          child: Text(name),
-        ));
+        body: Padding(
+            padding: EdgeInsets.all(10),
+            child: ListView(
+              children: <Widget>[
+                Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'Login Page',
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 30),
+                    )),
+                Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(fontSize: 20),
+                    )),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'User Name',
+                    ),
+                  ),
+                ),
+                
+                Container(
+                  height: 50,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: RaisedButton(
+                      textColor: Colors.white,
+                      color: Colors.blue,
+                      child: Text('Login'),
+                      onPressed: () {
+                        print(nameController.text);
+                        print(passwordController.text);
+                      },
+                    )),
+                
+              ],
+            )));
   }
 }
