@@ -8,6 +8,7 @@ class MyApp extends StatefulWidget {
   State<StatefulWidget> createState() => MyAppState();
 }
 
+//code
 class MyAppState extends State<MyApp> {
   GlobalKey qrKey = GlobalKey();
   var qrText = "";
